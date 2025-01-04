@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "344241052203",
+    "project_id": "cltproject",
+    "storage_bucket": "cltproject.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:344241052203:android:1e0cbdc2996faa6288a86e",
+        "android_client_info": {
+          "package_name": "com.ideaz.clt"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZJJzaGaA45BUeMOohkAo8_cgnggQ5z0g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
