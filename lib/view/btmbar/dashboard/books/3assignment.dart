@@ -244,8 +244,10 @@ class _TeacherAssignmentState extends State<TeacherAssignment> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "Title:  $chapter_title",
+                              "Title: $chapter_title",
                               textAlign: TextAlign.start,
+                              style: TextStyle(
+                                  color: colorController.normalgreenbtnclr),
                             ),
                           ],
                         ),
@@ -258,7 +260,10 @@ class _TeacherAssignmentState extends State<TeacherAssignment> {
                   chapter_description == ""
                       ? Text("")
                       : Text(
-                          "Description: $chapter_description",
+                          '${chapter_description.length > 26 ? 'Topic: ...${chapter_description.substring(0, 26)}' : "Topic: $chapter_description"}',
+                          // "Description: $chapter_description",
+                          style: TextStyle(
+                              color: colorController.normalgreenbtnclr),
                         ),
                   Padding(
                     padding: const EdgeInsets.only(top: 15, bottom: 5),
@@ -387,9 +392,12 @@ class _TeacherAssignmentState extends State<TeacherAssignment> {
                                 reusablebtn(
                                   context,
                                   "Submit Assignment",
-                                  colorController.normalgreenbtnclr,
+                                  selectedVideo != null
+                                      ? colorController.normalgreenbtnclr
+                                      : colorController.greytextfieldlableclr,
                                   0.95,
                                   () {
+                                     selectedVideo != null?
                                     showCupertinoDialog(
                                       context: context,
                                       builder: (BuildContext context) {
@@ -404,7 +412,7 @@ class _TeacherAssignmentState extends State<TeacherAssignment> {
                                                 Navigator.of(context)
                                                     .pop(); // Dismiss the dialog
                                               },
-                                              child: Text(
+                                              child: Text(  
                                                   selectvideo == true
                                                       ? 'No'
                                                       : "Back",
@@ -432,7 +440,7 @@ class _TeacherAssignmentState extends State<TeacherAssignment> {
                                           ],
                                         );
                                       },
-                                    );
+                                    ):null;
 
                                     if (selectvideo == true) {
                                       if (isUploading == false) {}

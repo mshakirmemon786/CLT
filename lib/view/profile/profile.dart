@@ -460,11 +460,12 @@ class _TeacherProfileState extends State<TeacherProfile> {
                                 itemCount: 1,
                                 itemBuilder: (context, index) {
                                   final item = data[index];
-                                  return Padding(
-                                    padding: const EdgeInsets.all(8.0),
+                                  return SizedBox(
+                                    width: MediaQuery.sizeOf(context).width*0.9,
                                     child: Row(
+
                                       mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                          MainAxisAlignment.spaceEvenly,
                                       children: [
                                         cicleiamgereusable(
                                             context, 25, "insta.png", () {
@@ -484,14 +485,14 @@ class _TeacherProfileState extends State<TeacherProfile> {
                                           social_link_connect(item['facebook']);
                                         }),
                                         cicleiamgereusable(
-                                            context, 25, "gmail.png", () {
-                                          social_link_connect(item['gmail']);
+                                            context, 25, "twitter.png", () {
+                                          social_link_connect(item['twitter']);
                                         }),
-                                        cicleiamgereusable(
-                                            context, 25, "call.png", () {
-                                          social_link_connect(
-                                              'https://wa.me/${item['call']}');
-                                        }),
+                                        // cicleiamgereusable(
+                                        //     context, 25, "call.png", () {
+                                        //   social_link_connect(
+                                        //       'https://wa.me/${item['call']}');
+                                        // }),
                                       ],
                                     ),
                                   );

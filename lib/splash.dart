@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter_firebase_notifications/view/updatefile.dart';
 
 import 'controller/colors.dart';
 import 'local/sharedprefencevalues.dart';
@@ -25,6 +25,7 @@ class _SplashState extends State<Splash> {
   @override
   void initState() {
     super.initState();
+    bool _isLoggedIn = false;
     checkLoginStatus();
     Timer(Duration(seconds: 3), () {
       if (wheretogo(context)) {
@@ -32,22 +33,17 @@ class _SplashState extends State<Splash> {
             context,
             MaterialPageRoute(
               builder: (context) => WillPopScope(
-                  onWillPop: () async => false, child: TeacherBtmbar()),
+                  onWillPop: () async => false,
+                  child:
+                      // TeacherBtmbar()
+                      UpdateAppPage()),
             ));
       } else {
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
               builder: (context) => WillPopScope(
-                  onWillPop: () async => false,
-                  child: AccountLoginOrRegister(
-                    home_or_login:true,
-                      tokenpush: tokenpush,
-                      pushtoken_or_null:
-                          MySharedPrefrence().get_push_token() == null ||
-                              MySharedPrefrence().get_push_token() == "" ||
-                              tokenpush == "" ||
-                              tokenpush == null?false:true))),
+                  onWillPop: () async => false, child:  UpdateAppPage())),
         );
       }
     });
@@ -67,7 +63,10 @@ class _SplashState extends State<Splash> {
     if (_isLoggedIn) {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => TeacherBtmbar()),
+        MaterialPageRoute(
+            builder: (context) =>
+                // TeacherBtmbar()
+                UpdateAppPage()),
       );
     } else {
       Navigator.pushReplacement(

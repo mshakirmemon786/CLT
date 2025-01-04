@@ -9,7 +9,8 @@ InkWell cicleiamgereusable(
     child: CircleAvatar(
       radius: radius,
       backgroundColor: Colors.transparent,
-      child: SizedBox(
+      child: Container(
+        margin: EdgeInsets.only(left: 5),
           width: MediaQuery.of(context).size.width * 0.5,
           child: Image.asset("assets/$imgpath")),
       // backgroundImage:

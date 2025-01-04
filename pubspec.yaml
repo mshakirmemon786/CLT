@@ -58,6 +58,10 @@ dependencies:
   change_app_package_name:
   flutter_html: ^3.0.0-beta.2
   google_sign_in: ^6.1.6
+  in_app_update: ^4.2.2
+  launch_review: ^3.0.1
+  package_info: ^2.0.2
+  firebase_remote_config: 
 
 dev_dependencies:
   flutter_test:

@@ -134,8 +134,8 @@ class _AccountLoginOrRegisterState extends State<AccountLoginOrRegister> {
                       padding: const EdgeInsets.only(
                           top: 20, left: 15, right: 15, bottom: 40),
                       child: Text(
-                        '"Welcome to the CLT Certified Literacy Teacher Learning App: Begin Your Journey Toward Excellence in Literacy Education - Register or Login to Your Account"',
-                        textAlign: TextAlign.center,
+                        'Welcome to the CLT Certified Literacy Teacher Learning App: Begin Your Journey Toward Excellence in Literacy Education - Register or Login to Your Account',
+                        textAlign: TextAlign.justify,
                         style: TextStyle(
                             fontSize: 15,
                             color: colorController.normalgreenbtnclr),
